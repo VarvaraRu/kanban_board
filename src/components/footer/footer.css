@@ -1,0 +1,22 @@
+.footer {
+    background-color: rgba(0, 103, 163, 1);
+    color: white; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; 
+    display: flex; 
+    align-items: center;
+    min-height: 8vh;
+}
+
+.info_about_year {
+    margin-left: 50%; 
+}
+
+.about_tasks_in_footer {
+    display: inline;
+    margin-left: 20px;
+}
+
+.div_with_tasks {
+    width: 30%; 
+}

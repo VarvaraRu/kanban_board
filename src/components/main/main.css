@@ -1,0 +1,6 @@
+.main_part {
+    background-color: rgba(0, 121, 191, 1);
+    flex-grow: 1;
+    min-height: 80vh;
+    padding-top: 40px;
+}

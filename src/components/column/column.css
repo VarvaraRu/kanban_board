@@ -1,0 +1,15 @@
+.column {
+    width: 330px;
+    height: 100%;
+    display: inline-block;
+    margin-left: 25px; 
+    background-color: rgba(235, 236, 240, 1);
+    border-radius: 5px; 
+    vertical-align: top; 
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 10px;
+}

@@ -1,0 +1,23 @@
+.task {
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px; 
+    font-size: 18px;
+    display:flex; 
+    justify-content: space-between;
+    cursor: pointer; 
+}
+
+.remove_btn {
+    background-color: transparent;
+    border: 0; 
+    cursor: pointer; 
+    opacity: 0;
+}
+
+.remove_btn:hover {
+    opacity: 1;
+}
