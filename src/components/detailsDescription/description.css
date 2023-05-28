@@ -1,0 +1,34 @@
+.wrapper_for_description {
+    background-color: rgba(0, 121, 191, 1);
+    height: 84vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task_details_description {
+    width: 1300px;
+    height: 520px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.button_in_details {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 95%;
+    margin-top: 10px;
+}
+
+@media (max-width: 1399.98px) { 
+    .task_details_description {
+        width: 280px; 
+        height: 400px;
+    }
+  }
+  @media (max-width: 1399.98px) { 
+    .button_in_details {
+        margin-left: 80%;
+    }
+  }

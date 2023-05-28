@@ -13,3 +13,11 @@
     font-size: 18px;
     padding: 10px;
 }
+
+
+@media (max-width: 1399.98px) { 
+        .column {
+            width: 280px;
+            margin-bottom: 50px;
+        }
+}

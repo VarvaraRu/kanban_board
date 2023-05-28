@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import './task.css';
-import {RemoveBtn} from './vectors_in_tasks/Group 3'
+import { Link } from 'react-router-dom';
 
-export const Task = () => {
+export const Task = (props) => {
 
     return (
-        <div className='task'>
-            <div className='task_description'></div>
-            <button className='remove_btn'><RemoveBtn/></button>
-        </div>
+        <Link to='/details'>
+            <div className='task'>
+                <div className='task_description'>{props.title}</div>
+            </div>
+        </Link>
     )
 }

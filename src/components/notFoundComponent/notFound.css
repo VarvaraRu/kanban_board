@@ -1,0 +1,24 @@
+.not_found {
+    height: 84vh;
+    background-color: rgba(0, 121, 191, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not_found_text {
+    font-size: 26px;
+    background-color: white;
+    width: 600px;
+    height: 150px;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+@media (max-width: 1399.98px) { 
+    .not_found_text {
+      width: 280px;
+    }
+  }
+  

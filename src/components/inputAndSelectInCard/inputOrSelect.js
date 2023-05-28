@@ -1,48 +1,43 @@
-import { useState } from 'react';
 import './inputOrSelect.css';
-import { ButtonSubmit } from '../buttons/buttonSubmitTask';
+import Select from 'react-select';
+import { useState } from 'react';
+import {useDispatch} from 'react-redux'; 
+import {addNewTask} from '../../store/todoSlice.js';
+import { onChangeStatusTask } from '../../store/todoSlice.js';
+import { useSelector } from 'react-redux';
 
 export const InputOrSelect = (props) => {
+    
+    const todos = useSelector(state => state.todos.todos); 
 
-    // const [shown, setShown] = useState(false);
+    const dispath = useDispatch(); 
+    const addTask = () => dispath(addNewTask(text));
+    const changeStatus = () => dispath(onChangeStatusTask());
 
+    const [text, setText] = useState('');
+
+    // const hundleStatus = (e, id) => {
+    //     console.log(id)
+    //     console.log (e.target.value)
+    // }
+    
     return (
         <div className='wrapper'>
-            <input className='inputForNewTask' placeholder='What needs to be done?'></input>
-            <ButtonSubmit/>
-            {props.state == 'Backlog' ? (
-                // <input className='inputForNewTask' placeholder='What needs to be done?'></input>
-                console.log ("yes")
+            {props.status === 'Backlog' ? (
+                <>
+                    <input className='inputForNewTask' placeholder='What needs to be done?' value={text} onChange={(e) => setText(e.target.value)} ></input>
+                    <button className="buttonSbmt" onClick={addTask}>Submit</button>
+                </>
             ) : (
-                // <select>
-                //     <option>test1</option>
-                //     <option>test2</option>
+                <Select className='select_in_card' options={todos}  onChange={changeStatus}/>
+                // <select >
+                //     {todos.map ((status) => (
+                //     <option key={status} value={status}>{status}</option>))}
+                    
                 // </select>
-                console.log ("no")
             )
             }   
         </div>
             
     )
 }
-
-
-// {(isNewTaskInputShown || isNewTaskSelectShown) &&
-//     <button onClick={() => {
-//         if (props.state === 'backlog') {
-//             setIsNewTaskInputShown(false)
-//             addTask(inputCardName);
-//             setInputCardName(undefined);
-//         } else {
-//             setIsNewTaskSelectShown(false);
-//             moveTask(selectedTaskId, props.state);
-//         }
-//     }}
-//     >Submit</button>
-//     }
-//     {(isNewTaskInputShown || isNewTaskSelectShown)
-//     && <button onClick={() =>
-//         props.state = 'backlog'
-//             ? setIsNewTaskInputShown(false)
-//             : setIsNewTaskSelectShown(false)
-//     }> Hide</button>}

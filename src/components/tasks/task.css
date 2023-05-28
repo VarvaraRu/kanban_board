@@ -11,13 +11,8 @@
     cursor: pointer; 
 }
 
-.remove_btn {
-    background-color: transparent;
-    border: 0; 
-    cursor: pointer; 
-    opacity: 0;
-}
-
-.remove_btn:hover {
-    opacity: 1;
+@media (max-width: 1399.98px) { 
+    .task {
+        width: 230px;
+    }
 }

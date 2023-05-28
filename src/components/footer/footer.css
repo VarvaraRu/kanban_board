@@ -20,3 +20,9 @@
 .div_with_tasks {
     width: 30%; 
 }
+
+@media (max-width: 1399.98px) { 
+    .footer{
+        display: none;
+    }
+}

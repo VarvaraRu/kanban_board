@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './buttonAddCard.css'; 
 import { InputOrSelect } from '../inputAndSelectInCard/inputOrSelect';
 
-export const Button = () => {
+export const Button = (props) => {
 
     const [active, setActive] = useState(false); 
 
@@ -10,7 +10,8 @@ export const Button = () => {
         
         <div className='wrapper'>
             {active ? (
-                <InputOrSelect/>
+                <InputOrSelect 
+                    status={props.status}/>
             ) : (
                 <></>
             )
