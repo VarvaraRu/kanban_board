@@ -3,7 +3,7 @@ import Select from 'react-select';
 import { useState } from 'react';
 import {useDispatch} from 'react-redux'; 
 import {addNewTask} from '../../store/todoSlice.js';
-import { onChangeStatusTask } from '../../store/todoSlice.js';
+// import { onChangeStatusTask } from '../../store/todoSlice.js';
 import { useSelector } from 'react-redux';
 
 export const InputOrSelect = (props) => {
@@ -12,15 +12,26 @@ export const InputOrSelect = (props) => {
 
     const dispath = useDispatch(); 
     const addTask = () => dispath(addNewTask(text));
-    const changeStatus = () => dispath(onChangeStatusTask());
+    // const changeStatus = () => dispath(onChangeStatusTask());
 
     const [text, setText] = useState('');
+    const [task, setTask] = useState(todos);
 
-    // const hundleStatus = (e, id) => {
-    //     console.log(id)
-    //     console.log (e.target.value)
-    // }
-    
+    const onChangeStatusTask = (task) => {
+        setTask(
+            todos.map(
+                task => {
+                    if (task.status !== props.status) {
+                        todos.find(task => task.id === task.id ? {...task, status: props.status} : task)
+                    }
+                    }
+            )
+        )
+        console.log (task.id)
+        console.log (task.status)
+        console.log (props.status)
+    }
+
     return (
         <div className='wrapper'>
             {props.status === 'Backlog' ? (
@@ -29,12 +40,8 @@ export const InputOrSelect = (props) => {
                     <button className="buttonSbmt" onClick={addTask}>Submit</button>
                 </>
             ) : (
-                <Select className='select_in_card' options={todos}  onChange={changeStatus}/>
-                // <select >
-                //     {todos.map ((status) => (
-                //     <option key={status} value={status}>{status}</option>))}
-                    
-                // </select>
+
+                <Select className='select_in_card'  options={todos} onChange={onChangeStatusTask}/>
             )
             }   
         </div>

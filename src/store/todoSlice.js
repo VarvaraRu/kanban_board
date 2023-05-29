@@ -25,10 +25,10 @@ const todoSlice = createSlice ({
             }
         }, 
 
-        onChangeStatusTask (state, action) {
-            // const taskToChange = state.todos.find(task => task.id === action.payload.id)
-            console.log('it works')
-        }
+        // onChangeStatusTask (state, action) {
+        //     // const taskToChange = state.todos.find(task => task.id === action.payload.id)
+        //     // console.log('!')
+        // }
          
     }
 }); 
