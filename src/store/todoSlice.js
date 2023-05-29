@@ -25,11 +25,18 @@ const todoSlice = createSlice ({
             }
         }, 
 
-        // onChangeStatusTask (state, action) {
-        //     // const taskToChange = state.todos.find(task => task.id === action.payload.id)
-        //     // console.log('!')
-        // }
-         
+        onChangeStatusTask (state, action) {
+
+            state.todos.map ((task) => {
+            //     if (task.id === •••){
+            //         todos.find(task => task.id === task.id ? {...task, status: •••} : task)
+            //     }
+                
+                console.log (task.id)
+                console.log (task.status)
+
+            })
+        }
     }
 }); 
 

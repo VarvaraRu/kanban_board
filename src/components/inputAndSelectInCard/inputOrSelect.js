@@ -3,7 +3,7 @@ import Select from 'react-select';
 import { useState } from 'react';
 import {useDispatch} from 'react-redux'; 
 import {addNewTask} from '../../store/todoSlice.js';
-// import { onChangeStatusTask } from '../../store/todoSlice.js';
+import { onChangeStatusTask } from '../../store/todoSlice.js';
 import { useSelector } from 'react-redux';
 
 export const InputOrSelect = (props) => {
@@ -12,25 +12,9 @@ export const InputOrSelect = (props) => {
 
     const dispath = useDispatch(); 
     const addTask = () => dispath(addNewTask(text));
-    // const changeStatus = () => dispath(onChangeStatusTask());
+    const changeStatus = () => dispath(onChangeStatusTask());
 
     const [text, setText] = useState('');
-    const [task, setTask] = useState(todos);
-
-    const onChangeStatusTask = (task) => {
-        setTask(
-            todos.map(
-                task => {
-                    if (task.status !== props.status) {
-                        todos.find(task => task.id === task.id ? {...task, status: props.status} : task)
-                    }
-                    }
-            )
-        )
-        console.log (task.id)
-        console.log (task.status)
-        console.log (props.status)
-    }
 
     return (
         <div className='wrapper'>
@@ -41,7 +25,7 @@ export const InputOrSelect = (props) => {
                 </>
             ) : (
 
-                <Select className='select_in_card'  options={todos} onChange={onChangeStatusTask}/>
+                <Select className='select_in_card' options={todos} onChange={(e) => {changeStatus()}}/>
             )
             }   
         </div>
