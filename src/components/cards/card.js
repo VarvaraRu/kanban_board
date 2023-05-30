@@ -6,13 +6,13 @@ import { useSelector } from 'react-redux';
 
 export const Card = (props) => {
   
-  const todos = useSelector(state => state.todos.todos); 
+  const tasks = useSelector(state => state.todos.todos); 
 
     return (
   
       <div className='card'>
         <Scrollbars autoHeight autoHeightMax={550}>
-          {todos
+          {tasks
           .filter((task) => task.status === props.status)
           .map((task) => 
           <Task key={task.id} title={task.text} status={task.status} description={task.description}/>

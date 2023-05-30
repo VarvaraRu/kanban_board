@@ -27,16 +27,18 @@ const todoSlice = createSlice ({
 
         onChangeStatusTask (state, action) {
 
-            state.todos.map ((task) => {
-            //     if (task.id === •••){
-            //         todos.find(task => task.id === task.id ? {...task, status: •••} : task)
-            //     }
-                
-                console.log (task.id)
-                console.log (task.status)
+            const changedTask = state.todos.find(task => task.id === action.payload)
+            console.log(action.payload)
+            // changedTask.status = newStatus
 
-            })
+
+            // console.log('it works')
+            // console.log(task.id)   
+            // console.log(task.status)   
+            // console.log(newStatus)   
+            // console.log(taskId)  
         }
+            
     }
 }); 
 
